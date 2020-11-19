@@ -43,6 +43,10 @@ rosrun turtlesim turtlesim_node
 rosrun turtlesim turtlesim_node __name:=turtle
 rosrun turtlesim turtlesim_node __name:=turtle2
 
+# Contrôle des 2 tortues avec les flèches
+rosrun turtlesim turtle_teleop_key
 
+# Affichage du graphe
+rosrun rqt_graph rqt_graph
 
 
