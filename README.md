@@ -31,3 +31,8 @@ export ROS_PACKAGE_PATH=/opt/ros/melodic/share:/home/etudiant/catkin_ws/src
 rosdep update
 
 roscd beginner_tutorials
+# Compilation à la racine (dans le workspace catkin_ws)
+catkin_make
+catkin_make install
+
+
