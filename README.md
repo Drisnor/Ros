@@ -2,6 +2,7 @@
 Chemin local  => ~ = /home/etudiant
 Chemin docker => root 
 
+env | grep ROS
 gedit ~/.bashrc
 => Add : source /opt/ros/melodic/setup.bash  
 => Redémarré un terminal
@@ -20,4 +21,13 @@ rosls roscpp_tutorials
 # Création d'un package
 cd ~/catkin_ws/src
 catkin_create_pkg beginner_tutorials std_msgs rospy roscpp
+# Vérif des dépendances : 
+rospack depends1 beginner_tutorials
 
+# Modif var env :
+echo $ROS_PACKAGE_PATH
+export ROS_PACKAGE_PATH=/opt/ros/melodic/share:/home/etudiant/catkin_ws/src
+# ou export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:/home/etudiant/catkin_ws/src
+rosdep update
+
+roscd beginner_tutorials
