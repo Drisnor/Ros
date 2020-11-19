@@ -1,4 +1,5 @@
 # Ros local à l'AIP
+http://wiki.ros.org/fr/ROS/Tutorials/UnderstandingTopics
 Chemin local  => ~ = /home/etudiant
 Chemin docker => root 
 
@@ -35,6 +36,7 @@ roscd beginner_tutorials
 catkin_make
 catkin_make install
 
+# TODO ADD : source /root/catkin_ws/devel/setup.bash dans .bashrc
 roscore
 # Dans un second terminal
 rosrun turtlesim turtlesim_node
@@ -48,5 +50,36 @@ rosrun turtlesim turtle_teleop_key
 
 # Affichage du graphe
 rosrun rqt_graph rqt_graph
+# Tout suppr et add /turtle1/pose, puis enlever les vitesses linéaire et angulaire
+
+
+rostopic pub /turtle1/cmd_vel * tab * * tab * pour complétion
+# Donne => rostopic pub /turtle1/cmd_vel geometry_msgs/Twist "linear:
+  x: 0.0
+  y: 0.0
+  z: 0.0
+angular:
+  x: 0.0
+  y: 0.0
+  z: 0.0
+  
+# On ajoute des vitesses : 
+  x: 0.0
+  y: 1000.0
+  z: 0.0
+angular:
+  x: 0.0
+  y: 0.0
+  z: 1000.5" -r 1 
+
+# Console
+rosrun rqt_console rqt_console
+
+# Contrôle de l'affichage console : 
+rosrun rqt_logger_level rqt_logger_level
+# Puis choisir les infos que l'on veut : Info, Debug, Error only ...
+
+
+
 
 
