@@ -1,5 +1,4 @@
-# Ros
-Bash local cmd : 
+# Ros local à l'AIP
 
 gedit ~/.bashrc
 => Add : source /opt/ros/melodic/setup.bash
