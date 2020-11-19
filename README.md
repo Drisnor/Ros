@@ -39,5 +39,10 @@ roscore
 # Dans un second terminal
 rosrun turtlesim turtlesim_node
 
+# Ouvrir 2 turtle :
+rosrun turtlesim turtlesim_node __name:=turtle
+rosrun turtlesim turtlesim_node __name:=turtle2
+
+
 
 
