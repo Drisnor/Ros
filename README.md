@@ -1,6 +1,6 @@
-# Ros local à l'AIP
+# TP robotique mobile : 
 http://wiki.ros.org/fr/ROS/Tutorials/UnderstandingTopics
-Chemin local  => ~ = /home/etudiant
+Chemin local AIP => ~ = /home/etudiant
 Chemin docker => root 
 
 env | grep ROS
