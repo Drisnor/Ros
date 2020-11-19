@@ -35,4 +35,9 @@ roscd beginner_tutorials
 catkin_make
 catkin_make install
 
+roscore
+# Dans un second terminal
+rosrun turtlesim turtlesim_node
+
+
 
