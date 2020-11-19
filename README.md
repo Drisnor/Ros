@@ -17,5 +17,7 @@ roscd roscpp
 roscd log
 rosls roscpp_tutorials
 
-
+# Création d'un package
+cd ~/catkin_ws/src
+catkin_create_pkg beginner_tutorials std_msgs rospy roscpp
 
