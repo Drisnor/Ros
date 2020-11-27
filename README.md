@@ -1,12 +1,16 @@
 # TP robotique mobile : 
 http://wiki.ros.org/fr/ROS/Tutorials/UnderstandingTopics
+# Tuto install local Ubuntu 18.04 : 
+# http://wiki.ros.org/melodic/Installation/Ubuntu
+# + sudo apt install ros-melodic-rospy
+
 Chemin local AIP => ~ = /home/etudiant
 Chemin docker => root 
 
 env | grep ROS
 gedit ~/.bashrc
 => Add : source /opt/ros/melodic/setup.bash  
-=> Redémarré un terminal
+=> Redémarrer un terminal
 
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src
