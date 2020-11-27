@@ -3,6 +3,8 @@ http://wiki.ros.org/fr/ROS/Tutorials/UnderstandingTopics
 # Tuto install local Ubuntu 18.04 : 
 # http://wiki.ros.org/melodic/Installation/Ubuntu
 # + sudo apt install ros-melodic-rospy
+# + sudo apt install ros-melodic-roslaunch
+# + sudo apt install ros-melodic-turtlesim
 
 Chemin local AIP => ~ = /home/etudiant
 Chemin docker => root 
@@ -41,6 +43,7 @@ catkin_make
 catkin_make install
 
 # TODO ADD : source /root/catkin_ws/devel/setup.bash dans .bashrc
+#                   ou /home/etudiant/...
 roscore
 # Dans un second terminal
 rosrun turtlesim turtlesim_node
@@ -68,9 +71,11 @@ angular:
   z: 0.0
   
 # On ajoute des vitesses : 
+# Position sur la grille en (x,y,z)
   x: 0.0
   y: 1000.0
   z: 0.0
+# Vitesse angulaire
 angular:
   x: 0.0
   y: 0.0
