@@ -167,4 +167,5 @@ chmod +x listener.py
 roscore
 rosrun beginner_tutorials listener.py
 rosrun beginner_tutorials talker.py
-#
+
+..... TUTO du wiki dessus
