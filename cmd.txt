@@ -52,6 +52,7 @@ catkin_make install
 source /root/catkin_ws/devel/setup.bash 
 #      ou /home/etudiant/ = $HOME
 
+******** Démarrer le RoS MASTER ********
 roscore
 # ET dans un second terminal
 rosrun turtlesim turtlesim_node
