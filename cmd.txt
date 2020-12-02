@@ -9,6 +9,9 @@
 Chemin local AIP => ~ = /home/etudiant
 Chemin docker => root 
 
+**************************************************************************************
+************************************ TP 1 ********************************************
+**************************************************************************************
 env | grep ROS
 gedit ~/.bashrc
 => Add : source /opt/ros/melodic/setup.bash  
@@ -93,10 +96,14 @@ rosrun rqt_console rqt_console
 rosrun rqt_logger_level rqt_logger_level
 # Puis choisir les infos que l'on veut : Info, Debug, Error only ...
 
+**************************************************************************************
+************************************ TP 2 ********************************************
+**************************************************************************************
+
 # Procédures LAUNCH (pour éviter les 40 terminaux ouverts ...)
 roscd beginner_tutorials
 mkdir launch
-# Créer un fichier launch1.txt avec :
+# Créer un fichier launch1.launch avec :
 <launch>
   <group ns="turtlesim1">
     <node pkg="turtlesim" name="sim" type="turtlesim_node"/>
@@ -112,8 +119,7 @@ mkdir launch
   </node>
 </launch>
 
-
-roslaunch beginner_tutorials launch1.txt
+roslaunch beginner_tutorials launch1.launch
 
 # Rosbag : Enregistre une séquence d'action teleop_key
 rosbag record -a
