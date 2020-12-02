@@ -94,5 +94,11 @@ mkdir launch
 # Copier le fichier xml du poly dans launch1.txt
 roslaunch beginner_tutorials launch1.txt
 
+# Rosbag : Enregistre une séquence d'action teleop_key
+rosbag record -a
+rosbag play 2020-12-02-09-44-50.bag # nom du fic créé au même endroit
 
+# Subset sur ce qui nous intéresse
+rosbag record -O subset /turtlesim1/turtle1/cmd_vel
+rosbag play subset.bag
 
