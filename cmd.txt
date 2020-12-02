@@ -141,6 +141,20 @@ mkdir launch
   </node>
 </launch>
 
+**************************************************************************************
+Détails sur les arguments d'un fichier launch :
+**************************************************************************************
+pkg/type/name: "pkg" pointe vers le paquet associé au noeud qui va être lancé
+               "type" fait référence au nom du fichier executable du noeud
+
+ns: We launch a node inside a NameSpace (ns). Useful when using multiple instances of the same node
+
+Respawn/Required: If      respawn=true, then this node will be restarted if it closed (for some reason)
+                  Else If Required=true => do the opposite : it will shut down all the nodes associated with a launch file if this particular node comes down
+
+**************************************************************************************
+
+# On lance cette config XML
 roslaunch beginner_tutorials launch1.launch
 
 # Rosbag : Enregistre une séquence d'action teleop_key
