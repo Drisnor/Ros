@@ -169,3 +169,6 @@ rosrun beginner_tutorials listener.py
 rosrun beginner_tutorials talker.py
 
 ..... TUTO du wiki dessus
+
+rosrun beginner_tutorials add_two_ints_server.py
+rosrun beginner_tutorials add_two_ints_client.py 20 50
