@@ -141,6 +141,11 @@ mkdir launch
   </node>
 </launch>
 
+# Ajouter un teleop_key : 3 façons 
+# 1) Ajouter le node avec pkg "turtle_teleop_key" dans le bon topic
+# 2) Créer un nouveau node avec pkg "turtle_teleop_key" ==> Remap à écrire
+# 3) En ligne de cmd (remap manuel) : rosrun turtlesim turtle_teleop_key /turtle1/cmd_vel:=/turtlesim1/turtle1/cmd_vel
+
 **************************************************************************************
 Détails sur les arguments d'un fichier launch :
 **************************************************************************************
