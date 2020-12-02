@@ -90,7 +90,9 @@ rosrun rqt_logger_level rqt_logger_level
 # Puis choisir les infos que l'on veut : Info, Debug, Error only ...
 
 roscd beginner_tutorials
-mkdir beginner_turorials
+mkdir launch
+# Copier le fichier xml du poly dans launch1.txt
+roslaunch beginner_tutorials launch1.txt
 
 
 
