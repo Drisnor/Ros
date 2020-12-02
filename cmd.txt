@@ -49,9 +49,8 @@ catkin_make install
 source /root/catkin_ws/devel/setup.bash 
 #      ou /home/etudiant/ = $HOME
 
-
 roscore
-# Dans un second terminal
+# ET dans un second terminal
 rosrun turtlesim turtlesim_node
 
 # Ouvrir 2 turtle :
@@ -63,9 +62,9 @@ rosrun turtlesim turtle_teleop_key
 
 # Affichage du graphe
 rosrun rqt_graph rqt_graph
-# Tout suppr et add /turtle1/pose, puis enlever les vitesses linéaire et angulaire
+# Paramètres graphiques de la fenêtre : TOUT SUPPR et ADD /turtle1/pose, puis enlever les vitesses linéaire et angulaire
 
-
+# DEBUG INFOS on topics
 rostopic pub /turtle1/cmd_vel * tab * * tab * pour complétion
 # Donne => rostopic pub /turtle1/cmd_vel geometry_msgs/Twist "linear:
   x: 0.0
@@ -94,9 +93,26 @@ rosrun rqt_console rqt_console
 rosrun rqt_logger_level rqt_logger_level
 # Puis choisir les infos que l'on veut : Info, Debug, Error only ...
 
+# Procédures LAUNCH (pour éviter les 40 terminaux ouverts ...)
 roscd beginner_tutorials
 mkdir launch
-# Copier le fichier xml du poly dans launch1.txt
+# Créer un fichier launch1.txt avec :
+<launch>
+  <group ns="turtlesim1">
+    <node pkg="turtlesim" name="sim" type="turtlesim_node"/>
+  </group>
+
+  <group ns="turtlesim2">
+    <node pkg="turtlesim" name="sim" type="turtlesim_node"/>
+  </group>
+
+  <node pkg="turtlesim" name="mimic" type="mimic">
+    <remap from="input" to="turtlesim1/turtle1"/>
+    <remap from="output" to="turtlesim2/turtle1"/>
+  </node>
+</launch>
+
+
 roslaunch beginner_tutorials launch1.txt
 
 # Rosbag : Enregistre une séquence d'action teleop_key
@@ -152,7 +168,6 @@ rosmsg show beginner_tutorials/Num
 rosmsg show *tab*
 
 # Services
-# sudo apt install ros-melodic-rospy-tutorials
 mkdir srv
 roscp rospy_tutorials AddTwoInts.srv ./srv
 
