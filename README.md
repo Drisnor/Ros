@@ -102,3 +102,43 @@ rosbag play 2020-12-02-09-44-50.bag # nom du fic créé au même endroit
 rosbag record -O subset /turtlesim1/turtle1/cmd_vel
 rosbag play subset.bag
 
+# Rosservice
+rosservice list
+rosservice call /turtlesim1/spawn *tab* *tab* # complétion
+
+# Ajoute une tortue
+rosservice call /turtlesim1/spawn "x: 7.0
+y: 7.0
+theta: 0.0
+name: ''" 
+
+rosservice call /turtlesim1/spawn "x: 7.0
+y: 7.0
+theta: 0.0
+name: 'my_turtle'" 
+
+# Déplacement
+rosservice call /turtlesim1/my_turtle/teleport_relative "linear: 0.0
+angular: 0.0" 
+
+# Changer la couleur de la traînée 
+rosservice call /turtlesim1/my_turtle/set_pen "{r: 255, g: 0, b: 0, width: 0, 'off': 0}" 
+
+# Rosparam
+rosparam list
+
+rosparam get turtlesim1/sim
+{background_b: 255, background_g: 86, background_r: 69}
+
+rosparam set turtlesim1/sim/background_r 255 
+rosparam get turtlesim1/sim {background_b: 255, background_g: 86, background_r: 255}
+# Il faut mettre à jour pour prendre en compte les modifs
+rosservice call /turtlesim1/clear
+# On peut charger ces instructions avec un fichier YAML
+
+# Création de messages et services
+Config suivant le poly...
+
+# Puis recompiler
+catkin_make
+
