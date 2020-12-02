@@ -5,6 +5,7 @@ http://wiki.ros.org/fr/ROS/Tutorials/UnderstandingTopics
 # + sudo apt install ros-melodic-rospy
 # + sudo apt install ros-melodic-roslaunch
 # + sudo apt install ros-melodic-turtlesim
+# + sudo apt install ros-melodic-rosbash
 
 Chemin local AIP => ~ = /home/etudiant
 Chemin docker => root 
@@ -33,12 +34,12 @@ rospack depends1 beginner_tutorials
 
 # Modif var env :
 echo $ROS_PACKAGE_PATH
-export ROS_PACKAGE_PATH=/opt/ros/melodic/share:/home/etudiant/catkin_ws/src
+export ROS_PACKAGE_PATH=/opt/ros/melodic/share:$HOME/catkin_ws/src  # TODO check $HOME en local AIP
 # ou export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:/home/etudiant/catkin_ws/src
 rosdep update
 
 roscd beginner_tutorials
-# Compilation à la racine (dans le workspace catkin_ws)
+# Compilation à la racine (dans le workspace catkin_ws !)
 catkin_make
 catkin_make install
 
@@ -88,7 +89,8 @@ rosrun rqt_console rqt_console
 rosrun rqt_logger_level rqt_logger_level
 # Puis choisir les infos que l'on veut : Info, Debug, Error only ...
 
-
+roscd beginner_tutorials
+mkdir beginner_turorials
 
 
 
