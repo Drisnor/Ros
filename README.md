@@ -142,3 +142,29 @@ Config suivant le poly...
 # Puis recompiler
 catkin_make
 
+# Rosmsg
+rosmsg show beginner_tutorials/Num
+rosmsg show *tab*
+
+# Services
+# sudo apt install ros-melodic-rospy-tutorials
+mkdir srv
+roscp rospy_tutorials AddTwoInts.srv ./srv
+
+# Dans catkin_ws
+mkdir scripts
+http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28python%29
+
+roscd beginner_tutorials/scripts/
+wget https://raw.github.com/ros/ros_tutorials/kinetic-devel/rospy_tutorials/001_talker_listener/talker.py
+chmod +x talker.py
+
+roscd beginner_tutorials/scripts/
+wget https://raw.github.com/ros/ros_tutorials/kinetic-devel/rospy_tutorials/001_talker_listener/listener.py
+chmod +x listener.py
+
+# Lancement des services
+roscore
+rosrun beginner_tutorials listener.py
+rosrun beginner_tutorials talker.py
+
