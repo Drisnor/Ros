@@ -70,13 +70,25 @@ rosrun rqt_graph rqt_graph
 
 # DEBUG INFOS on topics
 # rostopic = Afficher infos sur un topic
-# Exemple : rostopic pub /hello std_msgs/String “Hello Robot"
+************** Exemple **************
+>> rostopic pub /hello std_msgs/String “Hello Robot"
     # pub             = PUBLIER un nouveau topic
     # /hello          = NOM du topic
     # std_msgs/String = Type du topic => On publie une string topic
     # “Hello Robot” = Actual data contained by the topic = Le message lui-même
 
-rostopic pub /turtle1/cmd_vel * tab * * tab * pour complétion
+>> rostopic info /hello
+Type: std_msgs/String
+Publishers: 
+ * /rostopic_4332_1606929403668 (http://pc:33835/)
+Subscribers: None
+    
+>> rostopic echo /hello
+data: "Hello"
+---
+************** FIN EX **************
+**********************************************************************
+>> rostopic pub /turtle1/cmd_vel * tab * * tab * pour complétion
 # Donne => rostopic pub /turtle1/cmd_vel geometry_msgs/Twist "linear:
   x: 0.0
   y: 0.0
