@@ -120,7 +120,7 @@ rosrun rqt_logger_level rqt_logger_level
 ************************************ TP 2 ********************************************
 **************************************************************************************
 
-# Procédures LAUNCH (pour éviter les 40 terminaux ouverts ...)
+# Procédures LAUNCH : Lance plusieurs nodes/topics (pour éviter les 40 terminaux ouverts ...)
 # LANCE AUSSI ROSCORE automatiquement !
 # Syntaxe : roslaunch package_name file.launch
 roscd beginner_tutorials
