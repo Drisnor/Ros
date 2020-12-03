@@ -246,8 +246,10 @@ rosrun beginner_tutorials add_two_ints_client.py 20 50
 Turtlebot3 : Gazebo
 
 gedit ~/.bashrc 
-#Ajouter : export TURTLEBOT3\_MODEL=waffle
+#Ajouter : export TURTLEBOT3_MODEL=waffle
 #sudo apt install ros-melodic-turtlebot3-description ros-melodic-turtlebot3-simulations ros-melodic-turtlebot3-bringup ros-melodic-gmapping ros-melodic-map-server ros-melodic-turtlebot3-slam ros-melodic-dwa-local-planner
 
 #sudo apt install ros-melodic-turtlebot3-bringup
 
+# Launch Gazebo :
+roslaunch turtlebot3_gazebo turtlebot3_world.launch
