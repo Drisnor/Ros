@@ -249,7 +249,11 @@ gedit ~/.bashrc
 #Ajouter : export TURTLEBOT3_MODEL=waffle
 #sudo apt install ros-melodic-turtlebot3-description ros-melodic-turtlebot3-simulations ros-melodic-turtlebot3-bringup ros-melodic-gmapping ros-melodic-map-server ros-melodic-turtlebot3-slam ros-melodic-dwa-local-planner
 
-#sudo apt install ros-melodic-turtlebot3-bringup
+# Pour téléopérer :
+sudo apt install ros-melodic-gazebo-ros-pkgs
 
 # Launch Gazebo :
 roslaunch turtlebot3_gazebo turtlebot3_world.launch
+roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+
+... suite sur le POLY
